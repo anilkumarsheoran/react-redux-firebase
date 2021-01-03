@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-firebase",
+  "name": "react-redux-firebase app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,7 +8,9 @@
     "@testing-library/user-event": "^12.6.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-redux-firebase": "^3.8.1",
     "react-scripts": "4.0.1",
+    "redux-firestore": "^0.14.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -34,5 +36,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "firebase": "^8.2.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   }
 }
