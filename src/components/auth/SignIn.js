@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { signIn } from '../../store/actions/authActions'
 
 const SignIn = (props) => {
     const [inputs, setInputs] = useState({});
@@ -7,6 +9,7 @@ const SignIn = (props) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
+        props.signIn(inputs)
         console.log('handle submit')
     }
     return (
@@ -24,9 +27,24 @@ const SignIn = (props) => {
                 <div className="input-field">
                     <button className="btn pink lighten-1 z-depth-0" type="submit">Login</button>
                 </div>
+                { props.authError &&
+                    <p>{props.authError}</p>
+                }
             </form>
         </div>
     )
 }
 
-export default SignIn
+const mapStateToProps = (state)=>{
+    return {
+        authError: state.auth.authError
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signIn: (creds) =>dispatch(signIn(creds))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
