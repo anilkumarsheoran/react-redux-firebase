@@ -16,7 +16,7 @@ const ProjectDetails = (props) => {
                     </div>
                     <div className="card-action  lighten-4 grey-text">
                         <div>{ props.project.authorFirstName } { props.project.authorLastName } </div>
-                        {/* <div>{ new Date(props.project.createdAt.seconds) }</div> */}
+                        <div>{ project.createdAt.toDate().toString()  }</div>
                     </div>
                 </div>)
              : (<div>project is loading...</div>)
